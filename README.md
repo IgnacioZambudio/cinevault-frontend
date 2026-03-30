@@ -1,20 +1,71 @@
-<<<<<<< HEAD
-# React + Vite
+🎬 CineVault Frontend
+Frontend for CineVault, a fullstack application to manage movies and watchlists. Built with React + Vite.
+🚀 Live Demo
+App URL: https://cinevault-frontend.netlify.app
+🛠️ Tech Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite — UI and build tool
+React Router — client-side routing
+Axios — HTTP requests
+useContext — global state management
+CSS Modules — component scoped styles
 
-Currently, two official plugins are available:
+📁 Project Structure
+cinevault-frontend/
+├── public/
+├── src/
+│   ├── context/
+│   │   └── AuthContext.jsx       # Global auth context
+│   ├── layouts/
+│   │   ├── MainLayout.jsx        # Main layout with navbar
+│   │   └── MainLayout.module.css
+│   ├── pages/
+│   │   ├── HomePage.jsx          # Movie grid
+│   │   ├── MovieDetailPage.jsx   # Movie detail
+│   │   ├── LoginPage.jsx         # Login form
+│   │   ├── RegisterPage.jsx      # Register form
+│   │   ├── WatchlistPage.jsx     # User watchlist
+│   │   └── *.module.css          # Page styles
+│   ├── services/
+│   │   ├── api.js                # Axios instance + interceptors
+│   │   ├── authService.js        # Auth requests
+│   │   ├── movieService.js       # Movie requests
+│   │   └── watchlistService.js   # Watchlist requests
+│   ├── App.jsx                   # Routes setup
+│   ├── main.jsx                  # App entry point
+│   └── index.css                 # Global styles
+├── .env.example
+├── .gitignore
+└── package.json
+⚙️ Installation & Setup
+1. Clone the repository
+bashgit clone https://github.com/IgnacioZambudio/cinevault-frontend.git
+cd cinevault-frontend
+2. Install dependencies
+bashnpm install
+3. Configure environment variables
+Create a .env file in the root based on .env.example:
+VITE_API_URL=https://cinevault-backend-gmzp.onrender.com/api
+4. Run the app
+bash# Development
+npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Production build
+npm run build
+The app will start at http://localhost:5173
+📱 Pages
+PageRouteDescriptionHome/Movie grid with all moviesMovie Detail/movies/:idMovie info + add to watchlistLogin/loginLogin formRegister/registerRegister formWatchlist/watchlistUser's personal watchlist
+🔐 Authentication
 
-## React Compiler
+JWT token stored in localStorage
+Axios interceptor automatically adds token to all requests
+Global AuthContext manages user state across the app
+Protected features (watchlist, add to watchlist) only visible when logged in
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🌍 Deployment
+This app is deployed on Netlify: https://cinevault-frontend.netlify.app
+Backend API: https://cinevault-backend-gmzp.onrender.com
+👤 Author
+Ignacio Zambudio
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# cinevault-frontend
->>>>>>> 4e8a12444d8fd7f6ce3e3fe4c4556d4b74ee766d
+GitHub: @IgnacioZambudio
